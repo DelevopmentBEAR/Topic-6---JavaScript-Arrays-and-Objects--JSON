@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Conference Registration Form</title>
+
+<body>
+    <form>
+    <!-- Name, a text input for the registrant's name, max length 70 characters. Required. --> 
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name" maxlength="70" required>
+    <br>
+    <!-- Password. Use a password input. Required. -->
+    <label for="password">Password:</label>
+    <input id="password" type="password" name="password" required>
+    <br>
+    <!-- Email, using an email input.  Required. -->
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="email" required>
+    <br>
+    <!-- T-shirt size, either small, medium, or large. (All attendees receive a free t-shirt.) Use select and option elements. Required. -->
+    <label for="shirt_size">T-shirt Size:</label>
+        <select name="shirt_size" required>
+            <option value="">Select T-shirt Size</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="xlarge">X-Large</option>
+            <option value="xxlarge">2X-Large</option>
+            <option value="xxxlarge">3X-Large</option>
+        </select>
+    <br>
+    <!-- Date of birth, a date input element. Required.  -->
+    <label for="dob">Date of Birth:</label>
+    <input id="dob" type="date" name="dob" required> 
+    <br>
+    <!-- Receive email updates? Two radio buttons to select if wanting to receive email from conference sponsors; yes or no. Required. The radio buttons should work as radio buttons, selecting one button should deselect the other. -->
+    <label for="email_updates">Receive Email Updates from Conference Sponsors?</label>
+    <input id="email_updates_yes" type="radio" name="email_updates" value="yes" required> Yes
+    <input id="email_updates_no" type="radio" name="email_updates" value="no" required> No
+    <br>
+    <!-- Choose sessions, Two checkbox elements to select if attending the morning, and/or afternoon conference sessions.   -->
+    <label for="sessions">Choose Sessions:</label>
+    <input id="morning_session" type="checkbox" name="sessions" value="morning"> Morning Session
+    <input id="afternoon_session" type="checkbox" name="sessions" value="afternoon"> Afternoon Session
+    <br>
+    <!-- Special Requests, A textarea (for entering more than one line) any special requests. Set the size to be 7 rows and 70 columns. Not required. -->
+    <label for="special_requests">Special Requests:</label>
+    <textarea id="special_requests" name="special_requests" rows="7" cols="70"></textarea>
+    <br>
+    <!-- A submit button - input type = submit.
+        (Note that clicking this button doesn't do anything, but once we have a web server, the submit button could be used to send form data to the server.)-->
+    <button type="submit">Submit Registration</button>
+    <br>
+    </form>
+    
+</body>
+</html>
