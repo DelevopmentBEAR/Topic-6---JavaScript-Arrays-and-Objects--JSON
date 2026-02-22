@@ -117,3 +117,58 @@ console.log(`This class is ${department} ${classCode} ${className}.`);
 // This will print "This class is ITEC 2568 Web Client and Server Programming." to the console using string interpolation.
 
 console.log('-----------------------------'); // This is just a separator for the console output
+
+// This is a simple program to check if a student meets the prerequisites for an Android class.
+
+let tackenCSharp = false; // This is a boolean variable that indicates whether the student has taken C# or not
+let takenJava = true; // This is a boolean variable that indicates whether the student has taken Java or not
+
+if (tackenCSharp || takenJava) { // This checks if the student has taken either C# or Java
+    console.log("You meet the pre-requisites for this Android class."); // This will print to the console if the student has taken either C# or Java
+} else {
+    console.log("You must take C# or Java before taking this Android class."); // This will print to the console if the student has not taken either C# or Java
+}
+
+console.log('-----------------------------'); // This is just a separator for the console output
+
+// This is a simple program to check if someone can be a senator.
+// To be a senator, you must be at least 30 years old and have been a citizen for at least 9 years.
+// And you must also be a resident of the state you want to represent.
+
+let age = 40; // This is a number variable that holds the age of the person
+let yearsAsCitizen = 15; // This is a number variable that holds the number of years the person has been a citizen
+let stateOfResidence = "Wisconsin"; // This is a string variable that holds the state of residence of the person
+let stateToRepresent = "Wisconsin"; // This is a string variable that holds the state the person wants to represent
+
+// === is a strict equality operator, it checks if the values are equal and of the same type.
+if (age >= 30 && yearsAsCitizen >= 9 && stateOfResidence === stateToRepresent) { // This checks if the person meets all the requirements to be a senator
+    console.log("You are eligible to be a senator."); // This will print to the console if the person meets all the requirements to be a senator
+} else {
+    console.log("You do not meet the requirements to be a senator."); // This will print to the console if the person does not meet all the requirements to be a senator
+}
+
+console.log('-----------------------------'); // This is just a separator for the console output
+
+// falsey values in JavaScript: undefined, null, emptry lists, empty objects, 0, and false.
+if ('' == 0) { // This checks if an empty string is equal to 0 using loose equality (==)
+    console.log("An empty string is the same as 0!"); // This will print to the console because loose equality allows type coercion, so '' is considered equal to 0.
+} else {
+    console.log("An empty string is not the same as 0!"); // This will not print to the console because the if condition is true.
+}
+
+if (false == 0) { // This checks if false is equal to 0 using loose equality (==)
+    console.log("False is equal to 0!"); // This will print to the console because loose equality allows type coercion, so false is considered equal to 0.
+} else {
+    console.log("False is not equal to 0!"); // This will not print to the console because the if condition is true.
+}
+
+if (undefined == 0) { // This checks if undefined is equal to 0 using loose equality (==)
+    console.log("Undefined is equal to 0!"); // This will print to the console because loose equality allows type coercion, so undefined is considered equal to 0.
+} else {
+    console.log("Undefined is not equal to 0!"); // This will not print to the console because the if condition is false.
+}
+// Empty lists and empty objects are also falsey values, but they are not equal to 0, so they will not be considered equal to 0 in a loose equality comparison.
+// Using strict equality (===) would show that these values are not equal to 0, and they would be considered falsey in a boolean context, but they would not be equal to 0.
+// Best practice is to use strict equality (===) to avoid unexpected results from type coercion.
+
+console.log('-----------------------------'); // This is just a separator for the console output
