@@ -22,6 +22,7 @@ for (let i = 0; i < birds.length; i++) {
 // 2 eagle
 
 // Either way works, but the forEach method is often preferred in JavaScript for its simplicity and readability.
+
 console.log('-----------') // Separator for clarity
 
 // A while loop to double a number and display it
