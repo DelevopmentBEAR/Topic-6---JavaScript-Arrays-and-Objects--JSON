@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+</head>
+<body>
+    <h1>Input Elements</h1>
+    <label for="name">Name</label>
+    <input type="text" id="name">
+    <button id="submit-name">Submit Name</button>
+    <script>
+        // Think of the document as the whole page
+        // finding elements by ID is often the easiest way to find
+        // one specific element
+
+        // Variable to repersent the submit name button element
+        const submitNameButton =document.getElementById("submit-name");
+
+        // Variable to repersent the name input element
+        const nameInputElement = document.querySelector("#name"); 
+
+        // Variable to repersent the welcome message element
+        const welcomeMessage = document.querySelector("#welcome-message"); // This is the element that will show the welcome message
+
+        // Arguments = what type of event, what to do when the event happens
+        submitNameButton.addEventListener("click", function() {
+            // Another variable to repersent the text entered into the input
+            let usersName = nameInputElement.value; // This is the text that the user has entered into the input element  
+            if (usersName.length == 0) { // If name entery is empty,
+                alert("Enter a name "); // an alert pops up asking for a name.
+            } else { // Otherwise, if user has entered something, then an alert pops up with the users name
+                usersName = usersName.trim(); // This removes any extra spaces from the beginning and end of the name, but variable can become string acentdentally, so we need to reassign it to the same variable.
+                alert(`Welcome, ${usersName}!`); 
+            }
+            console.log(usersName); // This will print the users name to the console
+        });
+
+    </script>
+</body>
+</html>
