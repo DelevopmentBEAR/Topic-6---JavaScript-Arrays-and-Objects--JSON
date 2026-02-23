@@ -71,8 +71,10 @@
     let treeTypeSelect = document.querySelector('#tree-type')
 
     // TODO create a variable for city input element
+    let cityInput = document.querySelector('#city')
     // TODO create a variable for zip code input element
-    
+    let zipCodeInput = document.querySelector('#zipcode')
+
     let submitButton = document.querySelector('#submit-order')
 
     let orderSummaryParagraph = document.querySelector('#order-summary')
@@ -85,10 +87,35 @@
         let treeType = treeTypeSelect.value
 
         // TODO get the value from the input#city
+        let city = cityInput.value
         // TODO get the value from the input#zipcode
+        let zipCode = zipCodeInput.value
 
         // TODO Validate that all six input and select elements have been completed
         //  - check they all have a value
+        if (name.length === 0) {
+            errors.push("Name is required.");
+        }
+
+        if (houseNumber.length === 0) {
+            errors.push("House number is required.");
+        }
+
+        if (streetName.length === 0) {
+            errors.push("Street name is required.");
+        }
+
+        if (city.length === 0) {
+            errors.push("City is required.");
+        }
+
+        if (zipCode.length === 0) {
+            errors.push("Zip code is required.");
+        } else if (isNaN(zipCode)) {
+            errors.push("Zip code must be numeric.");
+        } else if (zipCode < 55001 || zipCode > 56763) {
+            errors.push("Zip code must be between 55001 and 56763.");
+        }
 
         // TODO Validate the zipcode is in the range 55001 and 56763. 
         // to check that the zip code is in Minnesota.
@@ -107,13 +134,27 @@
         // Add one error message for each problem with the form. 
 
         
+        
         // TODO - If there are any errors after checking all of the input elements, 
         // display an alert with all of the error messages. (Hint: use join)
         // and then return from this function to prevent further processing 
 
+        if (errors.length > 0) {
+            alert(errors.join("\n"))
+            return
+        } else {
+            // TODO - If there are no errors, use a template string to display an order 
+            // summary in the order summary paragraph.
+            
+            // If there are no errors, display the order summary in the orderSummaryParagraph element. 
+            // You can use a template literal to make this easier. 
+            orderSummaryParagraph.textContent = 
+            `Thank you for your order, ${name}! 
+            You have ordered a ${treeType} tree to be delivered to 
+            ${houseNumber} ${streetName}, ${city}, MN ${zipCode}.`
+        }
 
-        // TODO - If there are no errors, use a template string to display an order 
-        // summary in the order summary paragraph.
+        
 
         
     })
