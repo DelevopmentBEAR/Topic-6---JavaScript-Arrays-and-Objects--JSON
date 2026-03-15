@@ -80,6 +80,8 @@
     let orderSummaryParagraph = document.querySelector('#order-summary')
 
     submitButton.addEventListener('click', function() {
+        // Moved errors empty array to here
+        let errors = []
 
         let name = homeownerNameInput.value 
         let houseNumber = homeownerHouseNumberInput.value
@@ -117,6 +119,11 @@
             errors.push("Zip code must be between 55001 and 56763.");
         }
 
+        // Added error check for empty tree type selection.
+        if (treeType === " ") {
+            errors.push("Please select a type of tree to order.")
+        }
+
         // TODO Validate the zipcode is in the range 55001 and 56763. 
         // to check that the zip code is in Minnesota.
         // Make sure your script doesn't accept non-numeric input for the zip code. 
@@ -127,7 +134,6 @@
         // which will be applied if you give the class .error to any elements on the page. 
         // Make sure you remove this class when the form is completed correctly.
 
-        let errors = []
         
         // If a form element has not been completed, or if the data is not valid, 
         // add an error message to the errors array. (Hint: use push to add to the end of the array)
